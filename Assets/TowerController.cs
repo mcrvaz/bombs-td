@@ -10,7 +10,7 @@ public class TowerController : MonoBehaviour {
         targetController = GetComponent<TowerTargetController>();
     }
 
-    void OnCollisionStay2D(Collision2D other){
+    void OnTriggerStay2D(Collider2D other) {
         targetController.Fire(other.transform);
     }
 

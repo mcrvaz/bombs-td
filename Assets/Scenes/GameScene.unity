@@ -113,26 +113,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &449850701 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1733061478862070, guid: 894bd838b4a798f4b8cde2379b750870,
-    type: 2}
-  m_PrefabInternal: {fileID: 1860624118}
---- !u!58 &449850702
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 449850701}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.08
 --- !u!1 &1288317416
 GameObject:
   m_ObjectHideFlags: 0
