@@ -5,21 +5,9 @@ using UnityEngine;
 public class EnemySpawner : MonoBehaviour {
 
 	public float timeBetween;
-	public float amount;
-	public GameObject enemy;
 
-	private float timeToSpawn;
-
-	void Awake() {
-		StartCoroutine(Spawn());
-	}
-
-	public void NextWave() {
-
-	}
-
-	IEnumerator Spawn() {
-		for (int i = 0; i < amount; i++) {
+	public IEnumerator Spawn(EnemyWave wave) {
+		foreach(GameObject enemy in wave) {
 			Instantiate(enemy, transform.position, Quaternion.identity);
 			yield return new WaitForSeconds(timeBetween);
 		}

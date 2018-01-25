@@ -2,8 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EnemyWave {
+[System.Serializable]
+public class EnemyWave : IEnumerable {
 
-	public List<EnemyController> enemies;
+	public List<GameObject> enemies;
 
+    public IEnumerator GetEnumerator() {
+        return enemies.GetEnumerator();
+    }
 }

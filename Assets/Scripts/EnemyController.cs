@@ -6,6 +6,12 @@ public class EnemyController : MonoBehaviour {
 
 	public float maxHealth;
 	private float currentHealth;
+	private WaveController waveController;
+
+	void Awake() {
+		waveController = FindObjectOfType<WaveController>();
+		waveController.AddLiveEnemy(this);
+	}
 
 	public void TakeDamage(float damage) {
 		currentHealth -= damage;
@@ -13,6 +19,7 @@ public class EnemyController : MonoBehaviour {
 	}
 
 	void Die() {
+		waveController.KillEnemy(this);
 		Destroy(gameObject);
 	}
 
