@@ -11,7 +11,8 @@ public class TowerController : MonoBehaviour {
     }
 
     void OnTriggerStay2D(Collider2D other) {
-        targetController.Fire(other.transform);
+        var go = other.gameObject;
+        if(go.tag == Tags.ENEMY) targetController.Fire(other.transform);
     }
 
 }
