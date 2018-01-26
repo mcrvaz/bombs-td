@@ -7,7 +7,7 @@ public class TowerController : MonoBehaviour {
     private TowerTargetController targetController;
 
     void Awake() {
-        targetController = GetComponent<TowerTargetController>();
+        targetController = GetComponentInChildren<TowerTargetController>();
     }
 
     void OnTriggerStay2D(Collider2D other) {
