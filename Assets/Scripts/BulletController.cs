@@ -24,14 +24,19 @@ public class BulletController : MonoBehaviour {
 	void Update() {
         float distCovered = (Time.time - startTime) * speed;
         float fracJourney = distCovered / journeyLength;
+        if(target == null) Die();
         transform.position = Vector3.Lerp(startMarker.position, target.position, fracJourney);
+    }
+
+    void Die() {
+        Destroy(gameObject);
     }
 
     void OnCollisionEnter2D(Collision2D other) {
         var go = other.gameObject;
         if(go.tag == Tags.ENEMY) {
             go.GetComponent<EnemyController>().TakeDamage(damage);
-            Destroy(gameObject);
+            Die();
         }
     }
 

@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 
 public class EnemyController : MonoBehaviour {
 
@@ -10,7 +11,14 @@ public class EnemyController : MonoBehaviour {
 
 	void Awake() {
 		waveController = FindObjectOfType<WaveController>();
-		// waveController.AddLiveEnemy(this);
+		waveController.AddLiveEnemy(this);
+		currentHealth = maxHealth;
+		SetObjective();
+	}
+
+	private void SetObjective() {
+		var objective = GameObject.FindGameObjectWithTag(Tags.OBJECTIVE);
+		GetComponent<AIDestinationSetter>().target = objective.transform;
 	}
 
 	public void TakeDamage(float damage) {

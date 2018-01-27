@@ -53,6 +53,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - enemies:
-    - {fileID: 1733061478862070, guid: 6fbd46d14ab427246b79051246a6ee93, type: 2}
+    - {fileID: 1733061478862070, guid: 894bd838b4a798f4b8cde2379b750870, type: 2}
+    - {fileID: 1733061478862070, guid: 894bd838b4a798f4b8cde2379b750870, type: 2}
+    - {fileID: 1733061478862070, guid: 894bd838b4a798f4b8cde2379b750870, type: 2}
   - enemies:
     - {fileID: 1733061478862070, guid: 894bd838b4a798f4b8cde2379b750870, type: 2}

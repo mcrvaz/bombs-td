@@ -8,15 +8,16 @@ public class TowerTargetController : MonoBehaviour {
 	public float damage;
 	public float cooldown;
 
-	private float cooldownLeft { get; set; }
-
-	void Awake() {
-		cooldownLeft = cooldown;
-	}
+	private float cooldownLeft;
 
 	void Update() {
 		cooldownLeft -= Time.deltaTime;
 	}
+
+    void OnTriggerStay2D(Collider2D other) {
+        var go = other.gameObject;
+        if(go.tag == Tags.ENEMY) Fire(other.transform);
+    }
 
 	public void Fire(Transform target) {
 		if(cooldownLeft <= 0) {
