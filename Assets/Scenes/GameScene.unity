@@ -296,6 +296,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114600112938651756, guid: 58b32c2b59121c14f82332b125f41764,
+        type: 2}
+      propertyPath: waves.Array.data[1].enemies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4738776342762542, guid: 58b32c2b59121c14f82332b125f41764, type: 2}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -332,6 +337,24 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 114600112938651756, guid: 58b32c2b59121c14f82332b125f41764,
+        type: 2}
+      propertyPath: waves.Array.data[1].enemies.Array.data[1]
+      value: 
+      objectReference: {fileID: 1579529327784904, guid: 1c696f28c2a777d479c1d2df1141b2d3,
+        type: 2}
+    - target: {fileID: 114600112938651756, guid: 58b32c2b59121c14f82332b125f41764,
+        type: 2}
+      propertyPath: waves.Array.data[1].enemies.Array.data[2]
+      value: 
+      objectReference: {fileID: 1579529327784904, guid: 1c696f28c2a777d479c1d2df1141b2d3,
+        type: 2}
+    - target: {fileID: 114600112938651756, guid: 58b32c2b59121c14f82332b125f41764,
+        type: 2}
+      propertyPath: waves.Array.data[1].enemies.Array.data[0]
+      value: 
+      objectReference: {fileID: 1579529327784904, guid: 1c696f28c2a777d479c1d2df1141b2d3,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 58b32c2b59121c14f82332b125f41764, type: 2}
   m_IsPrefabParent: 0
@@ -539,6 +562,7 @@ GameObject:
   m_Component:
   - component: {fileID: 859748081}
   - component: {fileID: 859748082}
+  - component: {fileID: 859748083}
   m_Layer: 0
   m_Name: Objective
   m_TagString: Objective
@@ -584,6 +608,26 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.5, y: 0.5}
   m_EdgeRadius: 0
+--- !u!50 &859748083
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 859748080}
+  m_BodyType: 1
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 1
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 1
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 3
 --- !u!4 &896315404 stripped
 Transform:
   m_PrefabParentObject: {fileID: 4217471866720154, guid: b31cf6a1979a9c947b8ca5af7c41c5e2,

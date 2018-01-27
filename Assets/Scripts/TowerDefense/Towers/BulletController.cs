@@ -8,24 +8,22 @@ public class BulletController : MonoBehaviour {
 	public float damage;
 	public Transform target { get; set; }
 
-    private Transform startMarker;
     private float startTime;
     private float journeyLength;
 
-    void Awake() {
-		startMarker = transform;
-	}
-
 	void Start() {
         startTime = Time.time;
-        journeyLength = Vector3.Distance(startMarker.position, target.position);
+        journeyLength = Vector3.Distance(transform.position, target.position);
     }
 
 	void Update() {
         float distCovered = (Time.time - startTime) * speed;
         float fracJourney = distCovered / journeyLength;
-        if(target == null) Die();
-        transform.position = Vector3.Lerp(startMarker.position, target.position, fracJourney);
+        if(target == null) {
+            Die();
+            return;
+        };
+        transform.position = Vector3.Lerp(transform.position, target.position, fracJourney);
     }
 
     void Die() {

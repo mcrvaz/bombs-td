@@ -26,7 +26,7 @@ public class EnemyController : MonoBehaviour {
 		if(currentHealth <= 0) Die();
 	}
 
-	void Die() {
+	public void Die() {
 		waveController.KillEnemy(this);
 		Destroy(gameObject);
 	}
