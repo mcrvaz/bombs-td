@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour {
 
 	void Awake() {
 		waveController = FindObjectOfType<WaveController>();
-		waveController.AddLiveEnemy(this);
+		// waveController.AddLiveEnemy(this);
 	}
 
 	public void TakeDamage(float damage) {
