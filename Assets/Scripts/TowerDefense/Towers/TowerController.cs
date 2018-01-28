@@ -4,10 +4,4 @@ using UnityEngine;
 
 public class TowerController : MonoBehaviour {
 
-    private TowerTargetController targetController;
-
-    void Awake() {
-        targetController = GetComponentInChildren<TowerTargetController>();
-    }
-
 }
