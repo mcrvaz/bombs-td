@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Pathfinding;
 using System;
 
 public class TowerBuilder : MonoBehaviour {
@@ -11,10 +12,12 @@ public class TowerBuilder : MonoBehaviour {
 	private GameObject placeholder;
 	private SpriteRenderer sprite;
 	private GameObject towerContainer;
+	private AstarPath astarPath;
 	private bool canBuild;
 
 	void Awake() {
 		towerContainer = GameObject.FindGameObjectWithTag(Tags.TOWER_CONTAINER);
+		astarPath = GameObject.FindGameObjectWithTag(Tags.ASTAR).GetComponent<AstarPath>();
 	}
 
 	void Start() {
@@ -56,6 +59,7 @@ public class TowerBuilder : MonoBehaviour {
 		if(!canBuild) return;
 		var go = (GameObject) Instantiate(selectedTower, placeholder.transform.position, Quaternion.identity);
 		go.transform.SetParent(towerContainer.transform);
+		astarPath.Scan();
 	}
 
 	bool IsValidPosition(Vector3 position) {

@@ -8,6 +8,7 @@ TagManager:
   - EnemyContainer
   - Objective
   - TowerContainer
+  - AStar
   layers:
   - Default
   - TransparentFX
