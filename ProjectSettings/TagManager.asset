@@ -9,6 +9,7 @@ TagManager:
   - Objective
   - TowerContainer
   - AStar
+  - SpawnPoint
   layers:
   - Default
   - TransparentFX

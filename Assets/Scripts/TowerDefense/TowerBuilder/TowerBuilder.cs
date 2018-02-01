@@ -59,7 +59,15 @@ public class TowerBuilder : MonoBehaviour {
 		if(!canBuild) return;
 		var go = (GameObject) Instantiate(selectedTower, placeholder.transform.position, Quaternion.identity);
 		go.transform.SetParent(towerContainer.transform);
-		astarPath.Scan();
+		RescanPath(go);
+	}
+
+	void RescanPath(GameObject go) {
+		var bounds = go.GetComponent<CircleCollider2D>().bounds;
+		var guo = new GraphUpdateObject(bounds);
+		var spawnPointNode = AstarPath.active.GetNearest(GameObject.FindGameObjectWithTag(Tags.SPAWN_POINT).transform.position).node;
+		var goalNode = AstarPath.active.GetNearest(GameObject.FindGameObjectWithTag(Tags.OBJECTIVE).transform.position).node;
+		var isBlockingPath = !GraphUpdateUtilities.UpdateGraphsNoBlock(guo, spawnPointNode, goalNode, false);
 	}
 
 	bool IsValidPosition(Vector3 position) {
